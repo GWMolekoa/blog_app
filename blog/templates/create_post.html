@@ -1,0 +1,19 @@
+{% extends 'header.html' %}
+{% block title %}
+        Create New Post
+{% endblock %}
+
+{% block content %}
+
+<h1>Create New Post</h1>
+<br><br>
+<div class="container">
+    <div class="mb-3">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-warning">Post!</button>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'header.html' %}
+
+{% block content %}
+
+<h1>Blog Posts</h1>
+<br>
+<ul>
+    {% for post in object_list %}
+    <div class="card bg-warning-subtle shadow p-3 mb-1 bg-body-tertiary rounded w-75 p-3">
+        <div class="card-body bs-warning-border-subtle">
+            <div class="container text-start">
+                <li><a href="{% url 'posts' post.pk %}">{{ post.title}}</a> - {{ post.signature }} - {{ post.date}}
+                    <br>
+                    {{ post.body|slice:":110" }}{% if post.body|length > 100 %}...{% endif %}
+                </li>
+            </div>    
+        </div>
+    </div>  
+    <br>  
+    {% endfor %}
+</ul>
+
+{% endblock %}
