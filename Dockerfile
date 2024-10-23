@@ -19,4 +19,4 @@ COPY . /app/
 EXPOSE 8000
 
 # Command to run the Django app using Gunicorn
-CMD ["gunicorn", "hyperion.wsgi:application", "--bind", "0.0.0.0:$PORT"]
+CMD ["gunicorn", "hyperion.wsgi:application", "--bind", "0.0.0.0:8000"]
